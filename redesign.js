@@ -24,3 +24,10 @@ document.querySelectorAll('.project').forEach((card) => {
   });
   card.addEventListener('pointerleave', () => card.style.transform = '');
 });
+
+const navToggle = document.querySelector('.nav-toggle');
+navToggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('nav-open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+links.forEach((link) => link.addEventListener('click', () => { nav.classList.remove('nav-open'); navToggle.setAttribute('aria-expanded', false); }));
